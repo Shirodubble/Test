@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do-Liste</title>
+        <style>
+           * { 
+               box-sizing: border-box;
+               background-color: rgb(49, 47, 47); 
+               color: white; 
+               text-align:center;
+               font-family:arial;
+            }
+            #liContainer{
+                width:100%;
+                border: 1px solid red;
+            }
+            #li {
+                border: 1px solid white;
+                margin: 5px 10px 5px;
+                width: 80%;
+                display: inline-block;
+            }
+            #löschen{
+                width:10%; 
+                border: 1px solid white; 
+                display: inline-block;
+            }
+
+        </style>
+    </head>
+<body>
+   <h1>To-Do-Liste</h1>
+   <hr>
+   <input type='text' value='hier einfügen' id='inputtext'>
+   <input type='button' value='Hinzufügen' id='add'>
+   <ul id='liContainer'>
+    <!-- 
+        <li id='li'>Text 1 </li><input type='button' value='löschen' id='löschen'> 
+        <li id='li'>Text 2 </li><input type='button' value='löschen' id='löschen'>
+    -->
+   </ul>
+   <script>
+       document.getElementById('add').addEventListener('click',erstellen);
+        function erstellen (){
+            var inputvalue = document.getElementById('inputtext').value;
+            var textli= document.createTextNode(inputvalue);
+            var newli= document.createElement('li');
+            newli.id='li';
+            newli.appendChild(textli);
+            liContainer.appendChild(newli);
+        }
+        document.getElementById('add').addEventListener('click',delbutton);
+        function delbutton (){
+            var del = document.createElement('input')
+            del.id='löschen'
+            del.type='button'
+            del.value='löschen'
+            var li = document.getElementById('li')
+            liContainer.appendChild(del)
+        }
+        function test (prüfung){
+            if ('li' == null){
+                console.log='test'
+            }
+            else (document.getElementById('löschen').addEventListener('click',cancel))
+            function cancel(){
+            var lipoint = document.getElementById('li');
+            var cancelbutton = document.getElementById ('löschen')
+            delete cancelbutton.appendChild(lipoint)
+        }}
+   </script>
+</body>
